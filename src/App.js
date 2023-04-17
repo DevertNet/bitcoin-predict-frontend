@@ -10,7 +10,7 @@ function App() {
       axios.get(
         "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365"
       ),
-      axios.get("https://bitcoin-predict-backend.ddev.site/api/v1/list"),
+      axios.get(process.env.REACT_APP_BACKEND_API_URL),
     ])
       .then((responses) => {
         const coingeckoPrices = responses[0].data.prices.map(
@@ -58,6 +58,7 @@ function App() {
             ],
           },
           options: {
+            maintainAspectRatio: false,
             scales: {
               price: {
                 type: "linear",
@@ -85,7 +86,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div style={{ width: "3800px", height: "90vh", overflowX: "scroll" }}>
       <canvas ref={chartRef} />
     </div>
   );
