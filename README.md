@@ -6,6 +6,8 @@ You can find more informations about the whole project here: https://github.com/
 
 I have only brought the whole project so far that it runs locally. If you want to install it on a server, further steps may be necessary.
 
+![](readme.png)
+
 # Install
 
 1. `npm install`
@@ -15,6 +17,13 @@ I have only brought the whole project so far that it runs locally. If you want t
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+# Usage
+
+## Tabel "Result of /analyse Endpoint"
+
+- To adjust the date range, change it in `bitcoin-predict-backend` here: src/Controller/AnalyseController.php
+- The options for the algorithm can be changed here: src/Service/AnalyseService.php
 
 # License
 
